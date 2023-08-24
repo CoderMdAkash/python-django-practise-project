@@ -12,7 +12,7 @@ def form(request):
 
 
 def formAction(request):
-    fname = request.GET.get('fname', '')
-    lname = request.GET.get('lname', '')
+    fname = request.POST.get('fname', '')
+    lname = request.POST.get('lname', '')
     params = {'fname':fname, 'lname':lname}
     return render(request, 'form_data.html', params)
