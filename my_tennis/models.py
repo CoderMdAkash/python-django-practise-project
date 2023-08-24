@@ -3,10 +3,12 @@ from django.db import models
 class Member(models.Model):
   firstname = models.CharField(max_length=255)
   lastname = models.CharField(max_length=255)
+
 class Student(models.Model):
   name = models.CharField(max_length=255)
   roll = models.CharField(max_length=255)
   stu_id = models.CharField(max_length=255)
+  
 class Product(models.Model):
     product_id=models.AutoField
     product_name=models.CharField(max_length=50)

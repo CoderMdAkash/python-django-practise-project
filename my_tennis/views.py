@@ -1,8 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . models import Product
+from math import ceil
 
 def home(request):
-    return render(request, 'home.html')
+    products= Product.objects.all()
+    n= len(products)
+    nSlides= n//4 + ceil((n/4) + (n//4))
+    params={'no_of_slides':nSlides, 'range':range(1,nSlides), 'product': products}
+
+    return render(request, 'home.html', params)
 # def about(request):
 #     return HttpResponse("<h1>About Page</h1><br><a href='/'>Home</a>")
 def about(request):
